@@ -3,66 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
-
-    
-    <title>FANtisize</title>
-
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+<style>
+.hero {
+    background: url(assets/images/crowd.webp) center / cover;
+}
+</style>
 
 </head>
-<body class="#212121 grey darken-4">
-  
-    <h1><span class="#ab47bc purple lighten-1">Ready to FANtisize!</span></h1>
-        <p class="white-text">Placement text involving snazzy stuff we want to say about the app</p>
-
-    <h2><span class="#80deea cyan lighten-3">Maybe heres where we start making input fields?</span></h2>
-
-    
-    <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Artist Name" id="artist_name" type="text" class="validate">
-              <label for="artist_name">Artist Name</label>
-            </div>
-          </div>  
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Venue" id="venue_name" type="text" class="validate">
-              <label for="venue_name">Venue</label>
-            </div>
-          </div>
-        </form>    
-    </div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    </button>
-   
-   
-    <div class="row">
-      <div class="col s12 m7">
-        <div class="card">
-          <div class="card-image">
-            <img src="assets\images\pexels-photo-976866.jpeg">
-            <span class="card-title">Card Title</span>
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-          </div>
+<body>
+   <section class="hero is-fullheight">
+     <div class="container">
+        <!--Heading-->
+        <div class="block">
+            <h1 class="title has-text-white">Get Ready to FANtisize!</h1>
         </div>
-      </div>
+
+        <!--Content-->
+        <div class="block">
+        <p class="content is-large has-text-white">Here's where we say what the app is supposed to do and what you have to do to work it</p>
+        </div>
+        <!--Forms-->
+        <div class="block">
+            <form>
+                <div class="field">
+                    <label class="label has-text-white">Artist Name</label>
+                    <input type="text" class="input is-success" placeholder="Artist Name">
+                </div>
+                <div class="field">
+                        <label class="label has-text-white">City</label>
+                        <input type="text" class="input is-primary" placeholder="City">
+                </div>
+            </form>
+        </div>    
+            <!--Button-->
+       
+        <div class="block">
+            <button class="button is-warning">Search</button>
+        </div>
+        
+        <!--Box of Return Info-->
+        <div class="block">
+            <div class="box">
+                <h1>Here's where return info goes, can be deleted later if we want</h1>
+                    <p>ReturnData ReturnData ReturnData</p>
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
-
-
-    <script type="text/javascript" src="assets/js/materialize.js"></script>
-
+</section>
 </body>
 </html>
