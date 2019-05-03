@@ -1,7 +1,7 @@
-$("#inputButton").on("click", function(getData) {
+$(".is-warning").on("click", function(getData) {
     event.preventDefault();
-const city = $("#zip").val().trim();
-const queryTerm = $("#artist").val().trim().replace(' ', '-');
+const city = $(".is-primary").val().trim();
+const queryTerm = $(".is-success").val().trim().replace(' ', '-');
 const queryURL= "https://api.seatgeek.com/2/events?venue.city=" + city + "&q=" + queryTerm +  "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
 
 console.log(queryURL);
