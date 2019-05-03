@@ -5,6 +5,8 @@ const queryTerm = $(".is-success").val().trim().replace(' ', '-');
 const queryURL= "https://api.seatgeek.com/2/events?venue.city=" + city + "&q=" + queryTerm +  "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
 
 console.log(queryURL);
+$(".thing").empty();
+$(".thing2").empty();
 
 $.ajax({
 url: queryURL,
@@ -12,9 +14,6 @@ method: "GET"
 }).then(function(response) {
 
 console.log(response);
-
-$(".thing").empty();
-$(".thing2").empty()
 
 if (response.events.length === 0) {
     
@@ -25,7 +24,7 @@ if (response.events.length === 0) {
 
 card1 = $(`<div class="thing">`);
 picture = $("<div>");
-picture.html(`<img src="${response.events[0].performers[0].image}">`);
+picture.html(`<img src="${response.events[0].performers[0].image}" alt="Sorry, no photo available...">`);
 card1.append(picture);
 $(".box").append(card1);
 
