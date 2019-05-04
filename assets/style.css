@@ -9,3 +9,18 @@
     background: white;
     text-align: center;
 }
+
+.green {
+    border: 1px mediumseagreen solid;
+}
+
+#centered {
+    text-align: center;
+
+}
+
+#centers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
