@@ -1,3 +1,11 @@
-.box {
-    opacity: 0.5;
-  }
+.columns {
+
+    background: rgba(255, 255, 255, 0.5) /* white background with 50% opacity */
+    
+    }
+
+.element {
+
+    background: white;
+    text-align: center;
+}

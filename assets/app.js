@@ -21,8 +21,9 @@ function looking() {
     const queryURL= "https://api.seatgeek.com/2/events?venue.city=" + city + "&q=" + queryTerm +  "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
     
     console.log(queryURL);
+    $(".element").empty();
     $(".thing").empty();
-    $(".thing2").empty();
+    $(".column").remove();
     
     $.ajax({
     url: queryURL,
@@ -33,28 +34,28 @@ function looking() {
     
     if (response.events.length === 0) {
         
-        card3 = $(`<div class="thing">`);
+        card3 = $(`<div class="column">`);
         card3.html("Sorry, no shows soon");
-        $(".box").append(card3);
+        $(".columns").append(card3);
     }
     
     if (response.events[0].performers[0].image !== null) {
     
-    card1 = $(`<div class="thing">`);
-    picture = $("<div>");
-    picture.html(`<img src="${response.events[0].performers[0].image}" alt="Sorry, no photo available...">`);
+    card1 = $(`<div class="column">`);
+    picture = $(`<div>`);
+    picture.html(`<img src="${response.events[0].performers[0].image}">`);
     card1.append(picture);
-    $(".box").append(card1);
+    $(".columns").append(card1);
     
     }
     
     for (let i=0; i<3; i++) {
     
-    card2 = $(`<div class="thing">`);
-    link = $("<div>");
+    card2 = $(`<div class="column">`);
+    link = $(`<div class="element">`);
     link.html(`<a href="${response.events[i].url}">${response.events[i].title}</a>`);
     card2.append(link);
-    loc = $("<div>");
+    loc = $(`<div class="element">`);
     
     if (response.events[i].venue.state === null) {
     
@@ -66,7 +67,7 @@ function looking() {
     }
     
     card2.append(loc);
-    avg_price = $("<div>");
+    avg_price = $(`<div class="element">`);
     
     if (response.events[i].stats.average_price === null) {
     
@@ -79,7 +80,7 @@ function looking() {
     }
     
     card2.append(avg_price);
-    lowest_price = $("<div>");
+    lowest_price = $(`<div class="element">`);
     
     if (response.events[i].stats.lowest_price === null) {
     
@@ -92,7 +93,7 @@ function looking() {
     }
     
     card2.append(lowest_price);
-    date = $("<div>");
+    date = $(`<div class="element">`);
     date2 = response.events[i].datetime_local;
     
     if ((date2[11] + date2[12]) > 12) {
@@ -106,8 +107,8 @@ function looking() {
     }
     
     date.html(date3);
-    card2.append(date3);
-    $(".box").append(card2);
+    card2.append(date);
+    $(".columns").append(card2);
     }
     
     });
@@ -124,12 +125,12 @@ function looking() {
     let temp = res.list[0].main.temp;
     let words = res.list[0].weather[0].description;
     let iconcode = res.list[0].weather[0].icon;
-    wind_speed = $("<div>");
-    humidity = $("<div>");
-    temps = $("<div>");
-    wordss = $("<div>");
-    card4 = $(`<div class="thing2">`);
-    icon = $(`<div class="thing3">`);
+    wind_speed = $(`<div class="element">`);
+    humidity = $(`<div class="element">`);
+    temps = $(`<div class="element">`);
+    wordss = $(`<div class="element">`);
+    card4 = $(`<div class="column">`);
+    icon = $(`<div class="element">`);
     wind_speed.html("Wind: " + Math.floor(wind*0.621371) + " mph");
     humidity.html("Humidity: "+ humid + "%");
     temps.html("Temp: " + Math.floor((temp-273.15)*(9/5)+32) + " °F");
@@ -142,6 +143,6 @@ function looking() {
     card4.append(temps);
     card4.append(wordss);
     card4.append(icon);
-    $(".box").append(card4);
+    $(".columns").append(card4);
     });
 };
