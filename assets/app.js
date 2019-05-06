@@ -1,6 +1,20 @@
 $(".is-warning").on("click", function (getData) {
 
-    looking();
+    event.preventDefault();
+    var city = $(".is-primary").val().trim();
+    var queryTerm = $(".is-success").val().trim().replace(' ', '-');
+
+    if (queryTerm) {
+        
+        looking();
+
+    }
+
+    else if (city) {
+
+        looking();
+
+    }
 
 });
 
@@ -8,16 +22,30 @@ $(document).keypress(function (e) {
 
     if (e.which == 13) {
 
-        looking();
+        event.preventDefault();
+        var city = $(".is-primary").val().trim();
+        var queryTerm = $(".is-success").val().trim().replace(' ', '-');
+        
+        if (queryTerm) {
+        
+            looking();
+    
+        }
+    
+        else if (city) {
+    
+            looking();
+    
+        }
 
     };
+
 });
 
 function looking() {
 
-    event.preventDefault();
-    const city = $(".is-primary").val().trim();
-    const queryTerm = $(".is-success").val().trim().replace(' ', '-');
+    var city = $(".is-primary").val().trim();
+    var queryTerm = $(".is-success").val().trim().replace(' ', '-');
 
     if (city) {
 
@@ -87,7 +115,7 @@ function looking() {
             card2 = $(`<div class="column">`);
             green3 = $(`<div class="green">`);
             link = $(`<div class="element">`);
-            link.html(`<a href="${response.events[i].url}">${response.events[i].title}</a>`);
+            link.html(`<a href="${response.events[i].url}"target="_blank">${response.events[i].title}</a>`);
             green3.append(link);
             loc = $(`<div class="element">`);
 
