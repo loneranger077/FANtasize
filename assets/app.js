@@ -1,6 +1,20 @@
 $(".is-warning").on("click", function (getData) {
 
-    looking();
+    event.preventDefault();
+    var city = $(".is-primary").val().trim();
+    var queryTerm = $(".is-success").val().trim().replace(' ', '-');
+
+    if (queryTerm) {
+        
+        looking();
+
+    }
+
+    else if (city) {
+
+        looking();
+
+    }
 
 });
 
@@ -8,16 +22,26 @@ $(document).keypress(function (e) {
 
     if (e.which == 13) {
 
-        looking();
+        if (queryTerm) {
+        
+            looking();
+    
+        }
+    
+        else if (city) {
+    
+            looking();
+    
+        }
 
     };
+
 });
 
 function looking() {
 
-    event.preventDefault();
-    const city = $(".is-primary").val().trim();
-    const queryTerm = $(".is-success").val().trim().replace(' ', '-');
+    var city = $(".is-primary").val().trim();
+    var queryTerm = $(".is-success").val().trim().replace(' ', '-');
 
     if (city) {
 
