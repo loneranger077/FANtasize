@@ -18,7 +18,19 @@ function looking() {
     event.preventDefault();
     const city = $(".is-primary").val().trim();
     const queryTerm = $(".is-success").val().trim().replace(' ', '-');
-    const queryURL = "https://api.seatgeek.com/2/events?venue.city=" + city + "&q=" + queryTerm + "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
+
+    if (city) {
+
+        var queryURL = "https://api.seatgeek.com/2/events?venue.city=" + city + "&q=" + queryTerm + "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
+
+    }
+
+    else {
+
+        var queryURL = "https://api.seatgeek.com/2/events?" + "&q=" + queryTerm + "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
+
+    }
+    
 
     console.log(queryURL);
     $(".element").empty();
@@ -46,6 +58,25 @@ function looking() {
             card1 = $(`<div class="column">`);
             picture = $(`<div>`);
             picture.html(`<img src="${response.events[0].performers[0].image}">`);
+            card1.append(picture);
+            $(".columns").append(card1);
+
+        }
+
+        else if (response.events[1].performers[0].image !== null) {
+            
+            card1 = $(`<div class="column">`);
+            picture = $(`<div>`);
+            picture.html(`<img src="${response.events[1].performers[0].image}">`);
+            card1.append(picture);
+            $(".columns").append(card1);
+        }
+
+        else if (response.events[2].performers[0].image !== null) {
+
+            card1 = $(`<div class="column">`);
+            picture = $(`<div>`);
+            picture.html(`<img src="${response.events[2].performers[0].image}">`);
             card1.append(picture);
             $(".columns").append(card1);
 
@@ -118,6 +149,8 @@ function looking() {
 
     });
 
+    if (city) {
+
     const weather_url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&appid=27d554f4011ac1308b08df5e12e227d1"
 
     $.ajax({
@@ -152,4 +185,7 @@ function looking() {
         card4.append(green4);
         $(".columns").append(card4);
     });
+
+};
+
 };
