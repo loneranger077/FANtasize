@@ -22,6 +22,10 @@ $(document).keypress(function (e) {
 
     if (e.which == 13) {
 
+        event.preventDefault();
+        var city = $(".is-primary").val().trim();
+        var queryTerm = $(".is-success").val().trim().replace(' ', '-');
+        
         if (queryTerm) {
         
             looking();
@@ -111,7 +115,7 @@ function looking() {
             card2 = $(`<div class="column">`);
             green3 = $(`<div class="green">`);
             link = $(`<div class="element">`);
-            link.html(`<a href="${response.events[i].url}">${response.events[i].title}</a>`);
+            link.html(`<a href="${response.events[i].url}">${response.events[i].short_title}</a>`);
             green3.append(link);
             loc = $(`<div class="element">`);
 
