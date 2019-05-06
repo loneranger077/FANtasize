@@ -11,7 +11,12 @@
 .hero {
     background: url(assets/images/handsup.jpg) center / cover;
 }
-@media (max-width: 768px) { .hero url(handsup2.jpg); }
+.field {
+    width: 500px;
+    text-align: center;
+    display: inline-block;
+}
+@media (max-width: 768px) { .hero{background-image:  url(assets/images/handsup2.jpg);} }
 </style>
 
 </head>
@@ -20,7 +25,7 @@
      <div class="container">
         <!--Heading-->
         <div class="block">
-            <h1 class="title has-text-white has-text-centered">Get Ready to FANtasize!</h1>
+            <h1 class="title is-1 has-text-white has-text-centered">Get Ready to FANtasize!</h1>
         </div>
 
         <!--Content-->
@@ -32,7 +37,7 @@
             <form>
                 <div class="field">
                     <label class="label has-text-white">Artist</label>
-                    <input type="text" class="input is-success" placeholder="Enter an Artist">
+                    <input type="text" class="input is-rounded is-focused is-success" placeholder="Enter an Artist">
                 </div>
                 <div class="field">
                         <label class="label has-text-white">City</label>
