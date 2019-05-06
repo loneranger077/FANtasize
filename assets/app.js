@@ -22,6 +22,10 @@ $(document).keypress(function (e) {
 
     if (e.which == 13) {
 
+        event.preventDefault();
+        var city = $(".is-primary").val().trim();
+        var queryTerm = $(".is-success").val().trim().replace(' ', '-');
+        
         if (queryTerm) {
         
             looking();
