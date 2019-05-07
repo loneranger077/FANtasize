@@ -60,7 +60,7 @@ function looking() {
     }
 
 
-    console.log(queryURL);
+    
     $(".element").empty();
     $(".thing").empty();
     $(".column").remove();
@@ -70,7 +70,7 @@ function looking() {
         method: "GET"
     }).then(function (response) {
 
-        console.log(response);
+        
 
         if (response.events.length === 0) {
 
@@ -213,7 +213,5 @@ function looking() {
             card4.append(green4);
             $(".columns").append(card4);
         });
-
-    };
 
 };
