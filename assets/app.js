@@ -5,7 +5,7 @@ $(".is-warning").on("click", function (getData) {
     var queryTerm = $(".is-success").val().trim().replace(' ', '-');
 
     if (queryTerm) {
-        
+
         looking();
 
     }
@@ -25,17 +25,17 @@ $(document).keypress(function (e) {
         event.preventDefault();
         var city = $(".is-primary").val().trim();
         var queryTerm = $(".is-success").val().trim().replace(' ', '-');
-        
+
         if (queryTerm) {
-        
+
             looking();
-    
+
         }
-    
+
         else if (city) {
-    
+
             looking();
-    
+
         }
 
     };
@@ -58,7 +58,7 @@ function looking() {
         var queryURL = "https://api.seatgeek.com/2/events?" + "&q=" + queryTerm + "&client_id=OTMwMzkyN3wxNTU2NzI1Njk3Ljg5&client_secret=7028ce9d5083272224af581616c12f706176bb4f82cd4c17b2948857a215f156"
 
     }
-    
+
 
     console.log(queryURL);
     $(".element").empty();
@@ -92,7 +92,7 @@ function looking() {
         }
 
         else if (response.events[1].performers[0].image !== null) {
-            
+
             card1 = $(`<div class="column">`);
             picture = $(`<div>`);
             picture.html(`<img src="${response.events[1].performers[0].image}">`);
@@ -179,41 +179,41 @@ function looking() {
 
     if (city) {
 
-    const weather_url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&appid=27d554f4011ac1308b08df5e12e227d1"
+        const weather_url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&appid=27d554f4011ac1308b08df5e12e227d1"
 
-    $.ajax({
-        url: weather_url,
-        method: "GET"
-    }).then(function (res) {
-        console.log(res);
-        let wind = res.list[0].wind.speed;
-        let humid = res.list[0].main.humidity;
-        let temp = res.list[0].main.temp;
-        let words = res.list[0].weather[0].description;
-        let iconcode = res.list[0].weather[0].icon;
-        wind_speed = $(`<div class="element">`);
-        humidity = $(`<div class="element">`);
-        temps = $(`<div class="element">`);
-        wordss = $(`<div class="element">`);
-        card4 = $(`<div class="column">`);
-        green4 = $(`<div class="green">`);
-        icon = $(`<div class="element">`);
-        wind_speed.html("Wind: " + Math.floor(wind * 0.621371) + " mph");
-        humidity.html("Humidity: " + humid + "%");
-        temps.html("Temp: " + Math.floor((temp - 273.15) * (9 / 5) + 32) + " °F");
-        let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-        picture = $(`<img src=${iconurl}>`)
-        wordss.html(words);
-        icon.append(picture);
-        green4.append(wind_speed);
-        green4.append(humidity);
-        green4.append(temps);
-        green4.append(wordss);
-        green4.append(icon);
-        card4.append(green4);
-        $(".columns").append(card4);
-    });
+        $.ajax({
+            url: weather_url,
+            method: "GET"
+        }).then(function (res) {
+            console.log(res);
+            let wind = res.list[0].wind.speed;
+            let humid = res.list[0].main.humidity;
+            let temp = res.list[0].main.temp;
+            let words = res.list[0].weather[0].description;
+            let iconcode = res.list[0].weather[0].icon;
+            wind_speed = $(`<div class="element">`);
+            humidity = $(`<div class="element">`);
+            temps = $(`<div class="element">`);
+            wordss = $(`<div class="element">`);
+            card4 = $(`<div class="column">`);
+            green4 = $(`<div class="green">`);
+            icon = $(`<div class="element">`);
+            wind_speed.html("Wind: " + Math.floor(wind * 0.621371) + " mph");
+            humidity.html("Humidity: " + humid + "%");
+            temps.html("Temp: " + Math.floor((temp - 273.15) * (9 / 5) + 32) + " °F");
+            let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            picture = $(`<img src=${iconurl}>`)
+            wordss.html(words);
+            icon.append(picture);
+            green4.append(wind_speed);
+            green4.append(humidity);
+            green4.append(temps);
+            green4.append(wordss);
+            green4.append(icon);
+            card4.append(green4);
+            $(".columns").append(card4);
+        });
 
-};
+    };
 
 };

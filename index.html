@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,70 +8,81 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style.css">
     <title>FANtasize!</title>
-<style>
-.hero {
-    background: url(assets/images/handsup.jpg) center / cover;
-}
-.field {
-    width: 75%;
-    
-}
-@media (max-width: 768px) { .hero{background-image:  url(assets/images/handsup2.jpg);}
-                            .field{width: 100%;}
-}
-  
-</style>
+    <style>
+        .hero {
+            background: url(assets/images/handsup.jpg) center / cover;
+        }
+
+        .field {
+            width: 75%;
+
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                background-image: url(assets/images/handsup2.jpg);
+            }
+
+            .field {
+                width: 100%;
+            }
+        }
+    </style>
 
 </head>
-<body>
-   <section class="hero is-fullheight">
-     <div class="container">
-        <!--Heading-->
-        <div class="block">
-            <h1 class="title is-1 has-text-white has-text-centered has-background-black">Get Ready to FANtasize!</h1>
-        </div>
 
-        <!--Content-->
-        <div class="block">
-        <p class="content is-large has-text-centered has-text-white has-background-black">Just tell us your favorite artist and what city you want to see them in!</p>
-        </div>
-        <!--Forms-->
-        <div class="block">
-            <form>
-                <div class="field">
-                    <label class="label has-text-white">Artist</label>
-                    <input type="text" class="input is-rounded is-focused is-success" placeholder="Enter an Artist">
-                </div>
-                <div class="field">
+<body>
+    <section class="hero is-fullheight">
+        <div class="container">
+            <!--Heading-->
+            <div class="block">
+                <h1 class="title is-1 has-text-white has-text-centered">
+                    <img src="assets/images/logo black.png">
+                </h1>
+            </div>
+
+            <!--Content-->
+            <div class="block">
+                <p class="content is-large has-text-centered has-text-white has-background-black">Just tell us your
+                    favorite artist and what city you want to see them in!</p>
+            </div>
+            <!--Forms-->
+            <div class="block" id="big">
+                <form>
+                    <div class="field">
+                        <label class="label has-text-white">Artist</label>
+                        <input type="text" class="input is-rounded is-focused is-success" placeholder="Enter an Artist">
+                    </div>
+                    <div class="field">
                         <label class="label has-text-white">City</label>
                         <input type="text" class="input is-primary" placeholder="Enter a City">
-                </div>
-            </form>
-        </div>    
+                    </div>
+                </form>
+            </div>
             <!--Button-->
-       
-        <div class="block">
-            <button class="button is-warning">Search</button>
-        </div>
-        
-        <!--Box of Return Info-->
-        <div class="block">
-            <div class="columns">
-                
+
+            <div class="block">
+                <button class="button is-warning">Search</button>
+            </div>
+
+            <!--Box of Return Info-->
+            <div class="block">
+                <div class="columns">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
+    <footer class="footer">
         <div class="content has-text-centered">
-          <p>
-            <strong>FANtasize!</strong> © Copyright: Nick Guzak, Oscar Lanza, Josh Zills, and Rod Breland.
-          </p>
+            <p>
+                <strong>FANtasize!</strong> © Copyright: Nick Guzak, Oscar Lanza, Josh Zills, and Rod Breland.
+            </p>
         </div>
-      </footer>
+    </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
 </body>
+
 </html>
