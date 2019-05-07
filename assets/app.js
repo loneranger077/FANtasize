@@ -32,7 +32,7 @@ function looking() {
     }
     
 
-    console.log(queryURL);
+    
     $(".element").empty();
     $(".thing").empty();
     $(".column").remove();
@@ -42,7 +42,7 @@ function looking() {
         method: "GET"
     }).then(function (response) {
 
-        console.log(response);
+        
 
         if (response.events.length === 0) {
 
@@ -157,7 +157,6 @@ function looking() {
         url: weather_url,
         method: "GET"
     }).then(function (res) {
-        console.log(res);
         let wind = res.list[0].wind.speed;
         let humid = res.list[0].main.humidity;
         let temp = res.list[0].main.temp;
