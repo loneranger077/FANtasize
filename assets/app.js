@@ -213,5 +213,5 @@ function looking() {
             card4.append(green4);
             $(".columns").append(card4);
         });
-
+    };
 };
